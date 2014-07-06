@@ -116,14 +116,13 @@ endfunction
 
 " Colorscheme - Solarized for mac and Base16 for Linux
 syntax enable
-set background=dark
 if (match(system("uname -s"),"Darwin")!=-1)
+    set background=dark
     colorscheme solarized
 else
-    colorscheme base16
+    set background=light
+    colorscheme base16-solarized
 endif
-
-    
 
 " 80-char line
 set cc=80

@@ -114,10 +114,16 @@ endfunction
 
 :vmap <F6> :<C-U>call RunDoLines()<CR><CR>
 
-" Solarized
+" Colorscheme - Solarized for mac and Base16 for Linux
 syntax enable
 set background=dark
-colorscheme solarized
+if (match(system("uname -s"),"Darwin")!=-1)
+    colorscheme solarized
+else
+    colorscheme base16
+endif
+
+    
 
 " 80-char line
 set cc=80

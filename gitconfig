@@ -3,3 +3,7 @@
 	email = simon.georgeskot@gmail.com
 [push]
     default = simple
+[merge]
+    tool = vimdiff
+[core]
+    editor = vim

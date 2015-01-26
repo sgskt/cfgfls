@@ -1,0 +1,8 @@
+" Settings file for cVim chrome extension
+" Disable key bindings on gmail
+set blacklists = ["*://mail.google.com/*"]
+" Prevents focus on input box on site load
+set noautofocus
+" Bar at the bottom - like in vim
+let barposition = "bottom"
+

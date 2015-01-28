@@ -78,9 +78,9 @@ set expandtab
 
 "latex-box
 let g:LatexBox_Folding=1
-let g:LatexBox_viewer = 'Preview'
-let g:LatexBox_latexmk_preview_continuously = 1
-let g:LatexBox_latexmk_options = '-pv'
+let g:LatexBox_quickfix=4
+let g:LatexBox_viewer="apvlv"
+let g:LatexBox_latexmk_preview_continuously=1
 
 
 "R plugin options

@@ -4,6 +4,7 @@ ZSH_THEME="philips"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git osx ruby gem brew rails tmux)
 ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,3 +31,5 @@ export PATH=$PATH:/usr/texbin
 #MacVim executable alias
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
+# Gtest
+export GTEST_DIR="$HOME/gtest/"

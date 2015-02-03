@@ -119,3 +119,7 @@ set cc=80
 nmap <F2> :.w !pbcopy<CR><CR>
 vmap <F2> :w !pbcopy<CR><CR>
 :map <F3> :r !pbpaste<CR>
+
+" Spell check highlight
+hi SpellBad ctermfg=magenta
+

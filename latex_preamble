@@ -1,5 +1,9 @@
 \ProvidesPackage{preamble}
 
+% ****************************************************************************** 
+% Packages
+% ****************************************************************************** 
+
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}      
 \usepackage{geometry}      
@@ -22,15 +26,35 @@
 \usepackage{bbm}
 \usepackage{lipsum}
 \usepackage{longtable}
+\usepackage[rgb]{xcolor}
+\usepackage[author={sgeorgeskot}]{pdfcomment}
+\usepackage{threeparttable}
+\usepackage{siunitx}
+
 \linespread{1.125}\selectfont
 
-% *****************************************************************
-% Estout related things
-% *****************************************************************
-\newcommand{\sym}[1]{\rlap{#1}}% Thanks to David Carlisle
+% ******************************************************************************
+% Custom commands 
+% ******************************************************************************
 
+% Misc -------------------------------------------------------------------------
+
+\newcommand{\PDFNote}[2]{\pdfmarkupcomment[markup=Squiggly,color=green]{#1}{#2}}
+
+% Stata Tables -----------------------------------------------------------------
+
+\sisetup{
+    detect-mode,
+    tight-spacing		= true,
+    group-digits		= false ,
+    input-signs		= ,
+    input-symbols		= ( ) [ ] - + *,
+    input-open-uncertainty	= ,
+    input-close-uncertainty	= ,
+    table-align-text-post	= false
+}
+\newcommand{\sym}[1]{\rlap{#1}}
 \let\estinput=\input% define a new input command so that we can still flatten the document
-
 \newcommand{\estlscape}[3]{
     \vspace{.75ex}{%
         \begin{tabular}{l*{#2}{#3}}
@@ -41,8 +65,6 @@
         \end{tabular}%
     }%
 }	
-
-
 \newcommand{\estwide}[3]{
     \vspace{.75ex}{
         \begin{tabular*}
@@ -54,7 +76,6 @@
         \end{tabular*}
     }
 }	
-
 \newcommand{\estauto}[3]{
     \vspace{.75ex}{
         \begin{tabular}{l*{#2}{#3}}
@@ -65,33 +86,12 @@
         \end{tabular}
     }
 }
-
 \newcommand{\estlong}[3]{
     \begin{longtable}{@{\extracolsep{\fill}}l*{#2}{#3}}
         \estinput{#1}
     \end{longtable}
 }
-
-
-% *****************************************************************
-% Custom subcaptions
-% *****************************************************************
-\usepackage{threeparttable}% Alternative for Notes below table
-
 \newcommand{\Fignote}[1]{\Figtext{\emph{Note:~}~#1}}
 \newcommand{\Figsource}[1]{\Figtext{\emph{Source:~}~#1}}
 \newcommand{\Starnote}{\Figtext{* p < 0.1, ** p < 0.05, *** p < 0.01. Standard errors in parentheses.}}% Add significance note with \starnote
-% *****************************************************************
-% siunitx
-% *****************************************************************
-\usepackage{siunitx} % centering in tables
-\sisetup{
-    detect-mode,
-    tight-spacing		= true,
-    group-digits		= false ,
-    input-signs		= ,
-    input-symbols		= ( ) [ ] - + *,
-    input-open-uncertainty	= ,
-    input-close-uncertainty	= ,
-    table-align-text-post	= false
-}
+

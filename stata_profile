@@ -1,0 +1,15 @@
+* Custom parameters
+set more off, permanently
+set matsize 11000
+* Usefull system-wide directories
+global drive `"/Volumes/data"'
+global datapath `"$drive/data"'
+global geopath `"$drive/geography"'
+global insee `"$datapath/INSEE"'
+global bdf `"$insee/BDF"'
+global ep `"$insee/EP"'
+* Projects
+global patret `"~/Documents/Projects/patret"'
+global crowd `"~/Documents/Projects/crowd"'
+global capsoc `"~/Documents/Projects/capsoc"'
+global cycvat `"~/Documents/Projects/cycvat"'

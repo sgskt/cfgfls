@@ -1,6 +1,6 @@
 \ProvidesPackage{preamble}
 
-% ****************************************************************************** 
+% ******************************************************************************
 % Packages
 % ****************************************************************************** 
 
@@ -90,6 +90,13 @@
     \begin{longtable}{@{\extracolsep{\fill}}l*{#2}{#3}}
         \estinput{#1}
     \end{longtable}
+}
+\newcommand{\Figtext}[1]{%
+ \begin{tablenotes}[para,flushleft]
+ \hspace{6pt}
+ \hangindent=1.75em
+ #1
+ \end{tablenotes}
 }
 \newcommand{\Fignote}[1]{\Figtext{\emph{Note:~}~#1}}
 \newcommand{\Figsource}[1]{\Figtext{\emph{Source:~}~#1}}

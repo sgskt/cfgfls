@@ -1,5 +1,5 @@
 " No scroll bars
-set go-=r 
+set go-=r
 set go-=L
 
 " Font

@@ -1,6 +1,8 @@
 * Custom parameters
 set more off, permanently
 set matsize 11000
+* For console stata
+conren style 4
 * Usefull system-wide directories
 global drive `"/Volumes/data"'
 global datapath `"$drive/data"'

@@ -2,7 +2,21 @@
 set more off, permanently
 set matsize 11000
 * For console stata
-conren style 4
+loc bfs "<27> [ 4 m"
+loc its "<27> [ 4 m"
+loc ite "<27> [ 2 4 m"
+loc bfe "<27> [ 2 4 m"
+loc input "<27> [ 0 m"
+loc result "<27> [ 3 2 m"
+loc text "<27> [ 3 6 m"
+loc error "<27> [ 3 1 m"
+loc hilite "<27> [ 3 5 m"
+loc link "<27> [ 3 4 m"
+foreach s in "input" "result" "text" "error" "hilite" "link"{
+    foreach t in "sf" "bf" "it"{
+        set conren `t' `s' ``t's' ``s'' ``t'e'
+    }
+}
 * Usefull system-wide directories
 global drive `"/Volumes/data"'
 global datapath `"$drive/data"'

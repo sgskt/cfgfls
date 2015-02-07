@@ -30,11 +30,13 @@ set cc=80
 set laststatus=2
 " Allow backspace
 set backspace=indent,eol,start
-" Map ctrl-movement keys to window switching
-map <C-k> <C-w><Up>
-map <C-j> <C-w><Down>
-map <C-l> <C-w><Right>
-map <C-h> <C-w><Left>
+" j/k for buffers, h/l for windows, g/m for tabs
+map <C-k> :bnext<CR>
+map <C-j> :bprev<CR>
+map <C-l> <C-w>w
+map <C-h> <C-w>W
+noremap <C-g> gT
+noremap <C-m> gt
 " clipboard with mac
 nmap <F2> :.w !pbcopy<CR><CR>
 vmap <F2> :w !pbcopy<CR><CR>
